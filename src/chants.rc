@@ -1,8 +1,8 @@
 #include "windows.h"
 
 VS_VERSION_INFO VERSIONINFO
-	FILEVERSION 5,0,1,0
-	PRODUCTVERSION 5,0,1,0
+	FILEVERSION 5,1,0,0
+	PRODUCTVERSION 5,1,0,0
 	FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
 	FILEFLAGS 0x1L
@@ -18,10 +18,10 @@ BEGIN
 		BLOCK "040904b0"
 		BEGIN
 			VALUE "FileDescription", "ChantsServer 5 Module\0"
-			VALUE "FileVersion", "5.0.1.0\0"
-			VALUE "LegalCopyright", "Copyright © 2005-2018 PES Indie Team\0"
+			VALUE "FileVersion", "5.1.0.0\0"
+			VALUE "LegalCopyright", "Copyright © 2005-2023 PES Indie Team\0"
 			VALUE "Comments", "Add-on component for PES5, WE9, WE9LE:\
-individual chants for teams.\0"
+individual chants and anthem (only local) for teams.\0"
 		END
 	END
 	BLOCK "VarFileInfo"

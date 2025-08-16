@@ -8,13 +8,13 @@
 
 #define BUFLEN 4096
 
-#define DATALEN 5
+#define DATALEN 9
 
 #define AFS_FILE 0
 
-#define HOME_CHANT_ID 25
+#define ENTRANCE_0 1
 
-#define AWAY_CHANT_ID 30
+#define ENTRANCE_1 2
 
 #define TOTAL_CHANTS 5
 
@@ -22,41 +22,120 @@
 
 #define AWAY 1
 
-enum {
+enum 
+{
     CHANTS_ADDRESS, TOTAL_TEAMS,
     TEAM_IDS, ML_HOME_AREA, ML_AWAY_AREA,
+	HOME_CHANT_ID, AWAY_CHANT_ID,
+	MAIN_MENU_MODE, COMPETITION_ID,
 };
 
 static DWORD dtaArray[][DATALEN] = {
 	// PES5 Demo 2
 	{
-	 0, 0
-     },
+		 0, 0,
+		 0, 0, 0,
+		 0, 0,
+		 0, 0,
+    },
 	// PES5
 	{
-	 0xadf128, 221,
-     0x3be0f40, 0x38b77a4, 0x38b77a8,
-     },
+		 0xadf128, 221,
+		 0x3be0f40, 0x38b77a4, 0x38b77a8,
+		 162, 167,
+		 0xfde858, 0x3ac69ee,
+    },
 	// WE9
 	{
-     0xadf128, 221,
-     0x3be0f40, 0x38b77a4, 0x38b77a8,
+		 0xadf128, 221,
+		 0x3be0f40, 0x38b77a4, 0x38b77a8,
+		 162,167,
+		 0xfde858, 0x3ac69ee,
 	},
     // WE9:LE
 	{
-     0xade8d8, 221, 
-     0x3b68a80, 0x37f20b4, 0x37f20b8,
+		 0xade8d8, 221, 
+		 0x3b68a80, 0x37f20b4, 0x37f20b8,
+		 161, 166,
+		 0xf187f0, 0x3a22d2e,
 	},
 };
 
-static char* FILE_NAMES[] = {
-    "chant_0.adx",
-    "chant_1.adx",
-	"chant_2.adx",
-	"chant_3.adx",
-	"chant_4.adx",
+static DWORD dta[DATALEN];
+
+static char* fileNames[] = {
+	"league",
+	"league_cup",
+	"cup",
+	"world_cup",
+	"konami_cup",
+	"ml_div1_league",
+	"ml_div2_league",
+	"ml_div1_cup",
+	"ml_div2_cup",
+	"wefa_championship",
+	"wefa_masters_cup",
+	"default"
 };
 
+enum
+{
+	LEAGUE_FILE,
+	LEAGUE_CUP_FILE,
+	CUP_FILE,
+	WORLD_CUP_FILE,
+	KONAMI_CUP_FILE,
+	ML_DIV1_LEAGUE_FILE,
+	ML_DIV2_LEAGUE_FILE,
+	ML_DIV1_CUP_FILE,
+	ML_DIV2_CUP_FILE,
+	WEFA_CHAMPIONSHIP_FILE,
+	WEFA_MASTER_CUP_FILE,
+	DEFAULT_FILE,
+};
 
-static DWORD dta[DATALEN];
+// Competitions enum
+enum
+{
+	INTERNATIONAL_CUP_1,
+	EUROPE_CUP,
+	AFRICA_CUP,
+	AMERICA_CUP,
+	ASIA_OCEANIA_CUP,
+	KONAMI_CUP,
+	DUMMY0,
+	DUMMY1,
+	DUMMY2,
+	INTERNATIONAL_CUP_2,
+	DUMMY3,
+	INTERNATIONAL_LEAGUE,
+	ISS_CUP,
+	DUMMY4,
+	DUMMY5,
+	ITALIAN_LEAGUE,
+	ITALIAN_LEAGUE_CUP,
+	DUMMY6,
+	ENGLISH_LEAGUE,
+	ENGLISH_LEAGUE_CUP,
+	SPANISH_LEAGUE,
+	SPANISH_LEAGUE_CUP,
+	GERMAN_LEAGUE,
+	GERMAN_LEAGUE_CUP,
+	FRENCH_LEAGUE,
+	FRENCH_LEAGUE_CUP,
+	HOLLAND_LEAGUE,
+	HOLLAND_LEAGUE_CUP,
+	ML_DIV_1_LEAGUE,
+	ML_DIV_1_CUP,
+	OFF_SEASON_1,
+	NEGOTIATION_PERIOD_1,
+	ML_DIV_2_LEAGUE,
+	ML_DIV_2_CUP,
+	OFF_SEASON_2,
+	NEGOTIATION_PERIOD_2,
+	WEFA_CHAMPIONSHIP_PLAY_OFF,
+	WEFA_CHAMPIONSHIP_FIRST_ROUND,
+	WEFA_CHAMPIONSHIP_SECOND_ROUND,
+	WEFA_MASTERS_CUP,
+};
 
